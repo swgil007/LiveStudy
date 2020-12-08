@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -17,6 +20,21 @@ import org.junit.jupiter.api.TestMethodOrder;
  * Unit test for simple App.
  */
 public class JUnitTest {
+
+    @BeforeAll
+    static void beforeStart() {
+        System.out.println("처음 시작 전.");
+    }
+
+    @AfterAll
+    static void finalDone() {
+        System.out.println("최종 완료.");
+    }
+
+    @AfterEach
+    void done() {
+        System.out.println("각 메소드 실행 후 시작.");
+    }
 
     @BeforeEach
     void init() {
